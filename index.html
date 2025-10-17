@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeShield - Cuidamos do seu imóvel vazio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-gray': {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#1e3a8a',
+                            700: '#1e40af',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        },
+                        'navy': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#1e3a8a',
+                            700: '#1e40af',
+                            800: '#1e293b',
+                            900: '#0c4a6e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-blue-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold text-blue-gray-800">HomeShield</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="text-blue-gray-600 hover:text-blue-gray-800 px-3 py-2 text-sm font-medium transition-colors">Início</a>
+                        <a href="#planos" class="text-blue-gray-600 hover:text-blue-gray-800 px-3 py-2 text-sm font-medium transition-colors">Planos</a>
+                        <a href="#como-funciona" class="text-blue-gray-600 hover:text-blue-gray-800 px-3 py-2 text-sm font-medium transition-colors">Como Funciona</a>
+                        <a href="#contactos" class="text-blue-gray-600 hover:text-blue-gray-800 px-3 py-2 text-sm font-medium transition-colors">Contactos</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button onclick="scrollToContacts()" class="bg-blue-gray-600 hover:bg-blue-gray-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Pedir Visita
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-blue-gray-600 hover:text-blue-gray-800">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 text-blue-gray-600 hover:text-blue-gray-800">Início</a>
+                <a href="#planos" class="block px-3 py-2 text-blue-gray-600 hover:text-blue-gray-800">Planos</a>
+                <a href="#como-funciona" class="block px-3 py-2 text-blue-gray-600 hover:text-blue-gray-800">Como Funciona</a>
+                <a href="#contactos" class="block px-3 py-2 text-blue-gray-600 hover:text-blue-gray-800">Contactos</a>
+                <button onclick="scrollToContacts()" class="w-full text-left bg-blue-gray-600 text-white px-3 py-2 rounded-lg mt-2">Pedir Visita</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <img src="https://i.postimg.cc/gwnZc0TQ/logo.png" alt="HomeShield Logo" class="h-20 w-auto mx-auto mb-6" onerror="this.style.display='none';">
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-blue-gray-800 mb-6">
+                    Enquanto o imóvel está vazio,<br>
+                    <span class="text-blue-gray-600">nós cuidamos dele.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-gray-600 mb-8 font-light">
+                    A companhia da sua casa.
+                </p>
+                <button onclick="scrollToContacts()" class="bg-blue-gray-600 hover:bg-blue-gray-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg">
+                    Saber Mais
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Service Section -->
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-gray-800 mb-8">
+                O que é o HomeShield?
+            </h2>
+            <p class="text-lg md:text-xl text-blue-gray-600 leading-relaxed mb-6">
+                Visitamos, verificamos e relatamos o estado do seu imóvel vazio — com profissionalismo e confiança. 
+                O nosso serviço garante que a sua propriedade está segura e bem cuidada, mesmo quando não está lá.
+            </p>
+            <div class="flex items-center justify-center space-x-4">
+                <div class="w-12 h-12 bg-blue-gray-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9,12L11,14L15,10L13.59,8.59L11,11.17L9.41,9.59L9,12M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                    </svg>
+                </div>
+                <span class="text-blue-gray-700 font-medium">Tranquilidade garantida para proprietários</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="planos" class="py-20 bg-blue-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-gray-800 mb-4">
+                    Planos de Serviço
+                </h2>
+                <p class="text-lg text-blue-gray-600">
+                    Escolha o plano que melhor se adapta às suas necessidades
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Shield -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center flex flex-col h-full">
+                    <div class="w-16 h-16 bg-blue-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-gray-800 mb-4">Basic Shield</h3>
+                    <p class="text-blue-gray-600 mb-6">Verificação essencial do seu imóvel com relatório básico</p>
+                    <div class="text-3xl font-bold text-blue-gray-800 mb-6">
+                        desde <span class="text-blue-gray-600">25€</span>/visita
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Verificação visual exterior
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Relatório por email
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Fotografias básicas
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-gray-100 hover:bg-blue-gray-200 text-blue-gray-800 py-3 rounded-lg font-medium transition-colors mt-auto">
+                        Escolher Plano
+                    </button>
+                </div>
+
+                <!-- Comfort Shield -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center border-2 border-blue-gray-600 relative flex flex-col h-full">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Mais Popular
+                    </div>
+                    <div class="w-16 h-16 bg-blue-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V18H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-gray-800 mb-4">Comfort Shield</h3>
+                    <p class="text-blue-gray-600 mb-6">Verificação completa interior e exterior com relatório detalhado</p>
+                    <div class="text-3xl font-bold text-blue-gray-800 mb-6">
+                        desde <span class="text-blue-gray-600">45€</span>/visita
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Verificação interior e exterior
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Relatório detalhado
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Fotografias profissionais
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Verificação de segurança
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-gray-600 hover:bg-blue-gray-700 text-white py-3 rounded-lg font-medium transition-colors mt-auto">
+                        Escolher Plano
+                    </button>
+                </div>
+
+                <!-- Premium Shield -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center flex flex-col h-full">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-gray-600 to-blue-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5,16L3,5H1V3H4L6,14L7,18H19V16H8L7,15H19L21,9H7L6.2,5H21V3H5.27L4.82,1H3V3H4.18L5,16M8,23A2,2 0 0,1 6,21A2,2 0 0,1 8,19A2,2 0 0,1 10,21A2,2 0 0,1 8,23M20,23A2,2 0 0,1 18,21A2,2 0 0,1 20,19A2,2 0 0,1 22,21A2,2 0 0,1 20,23Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-gray-800 mb-4">Premium Shield</h3>
+                    <p class="text-blue-gray-600 mb-6">Serviço completo com manutenção preventiva e apoio 24/7</p>
+                    <div class="text-3xl font-bold text-blue-gray-800 mb-6">
+                        desde <span class="text-blue-gray-600">75€</span>/visita
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Tudo do Comfort Shield
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Manutenção preventiva
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Apoio 24/7
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Gestão de emergências
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-gray-100 hover:bg-blue-gray-200 text-blue-gray-800 py-3 rounded-lg font-medium transition-colors mt-auto">
+                        Escolher Plano
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-gray-800 mb-4">
+                    Porquê confiar no HomeShield?
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="h-8 w-8 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V18H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-blue-gray-800 mb-2">Seguro de responsabilidade civil</h3>
+                    <p class="text-blue-gray-600">Protegemos o seu imóvel com cobertura total</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="h-8 w-8 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-blue-gray-800 mb-2">Relatórios profissionais</h3>
+                    <p class="text-blue-gray-600">Documentação detalhada de cada visita</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="h-8 w-8 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-blue-gray-800 mb-2">Verificação fotográfica</h3>
+                    <p class="text-blue-gray-600">Registo visual completo do estado do imóvel</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-gray-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="h-8 w-8 text-blue-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-blue-gray-800 mb-2">Serviço humano e personalizado</h3>
+                    <p class="text-blue-gray-600">Atendimento próximo e dedicado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-blue-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-gray-800 mb-4">
+                    O que dizem os nossos clientes
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-gray-600 font-semibold">AM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-gray-800">António M.</h4>
+                            <p class="text-sm text-blue-gray-600">Proprietário</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-gray-700 italic">
+                        "Desde que contratei o HomeShield, durmo descansado. Sei que a minha casa está em boas mãos."
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-gray-600 font-semibold">MS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-gray-800">Maria S.</h4>
+                            <p class="text-sm text-blue-gray-600">Investidora</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-gray-700 italic">
+                        "O serviço é impecável. Os relatórios são detalhados e chegam sempre a tempo. Recomendo vivamente."
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-gray-600 font-semibold">JC</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-gray-800">João C.</h4>
+                            <p class="text-sm text-blue-gray-600">Emigrante</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-gray-700 italic">
+                        "Vivo no estrangeiro e preciso de saber que a casa dos meus pais está bem. O HomeShield dá-me essa tranquilidade."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contactos" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-gray-800 mb-4">
+                    Quer saber mais? Fale connosco.
+                </h2>
+                <p class="text-lg text-blue-gray-600">
+                    Estamos aqui para esclarecer todas as suas dúvidas
+                </p>
+            </div>
+            
+            <form id="contact-form" class="max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="nome" class="block text-sm font-medium text-blue-gray-700 mb-2">Nome</label>
+                        <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 border border-blue-gray-300 rounded-lg focus:ring-2 focus:ring-blue-gray-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="telefone" class="block text-sm font-medium text-blue-gray-700 mb-2">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="w-full px-4 py-3 border border-blue-gray-300 rounded-lg focus:ring-2 focus:ring-blue-gray-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-blue-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-blue-gray-300 rounded-lg focus:ring-2 focus:ring-blue-gray-500 focus:border-transparent">
+                </div>
+                <div class="mb-6">
+                    <label for="mensagem" class="block text-sm font-medium text-blue-gray-700 mb-2">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" class="w-full px-4 py-3 border border-blue-gray-300 rounded-lg focus:ring-2 focus:ring-blue-gray-500 focus:border-transparent"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-gray-600 hover:bg-blue-gray-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                        Enviar Mensagem
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-xl font-bold">HomeShield</span>
+                    </div>
+                    <p class="text-blue-gray-300">
+                        Cuidamos do seu imóvel vazio com profissionalismo e confiança.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contactos</h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            info@homeshield.pt
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                            </svg>
+                            +351 123 456 789
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Siga-nos</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-gray-300 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-gray-300 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-gray-300 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.222.085.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-gray-700 mt-8 pt-8 text-center">
+                <p class="text-blue-gray-300">
+                    © 2024 HomeShield. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div id="floating-whatsapp" class="fixed bottom-6 right-6 z-50">
+        <button id="whatsapp-float-btn" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+            </svg>
+        </button>
+        <div id="whatsapp-tooltip" class="absolute bottom-16 right-0 bg-blue-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 transform translate-y-2 transition-all duration-300 pointer-events-none">
+            Fale connosco no WhatsApp
+            <div class="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-gray-800"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to scroll to contacts section
+        function scrollToContacts() {
+            document.getElementById('contactos').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = 'Mensagem Enviada!';
+            button.classList.remove('bg-blue-gray-600', 'hover:bg-blue-gray-700');
+            button.classList.add('bg-green-600');
+            
+            // Reset form
+            this.reset();
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-600');
+                button.classList.add('bg-blue-gray-600', 'hover:bg-blue-gray-700');
+            }, 3000);
+        });
+
+        // Plan selection buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Escolher Plano')) {
+                button.addEventListener('click', function() {
+                    const planCard = this.closest('.bg-white');
+                    const planName = planCard.querySelector('h3').textContent;
+                    const planPrice = planCard.querySelector('.text-3xl').textContent;
+                    
+                    // Show selection feedback
+                    const originalText = this.textContent;
+                    this.textContent = 'Plano Selecionado!';
+                    this.classList.add('bg-green-600', 'text-white');
+                    
+                    // Pre-fill contact form with plan info
+                    const messageField = document.getElementById('mensagem');
+                    const cleanPrice = planPrice.replace(/\s+/g, ' ').trim();
+                    messageField.value = `Olá! Gostaria de saber mais sobre o plano ${planName} (${cleanPrice}).
+
+Por favor contactem-me para mais informações sobre este serviço.
+
+Obrigado!`;
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.classList.remove('bg-green-600', 'text-white');
+                    }, 2000);
+                    
+                    // Scroll to contact section
+                    setTimeout(() => {
+                        document.getElementById('contactos').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }, 500);
+                });
+            }
+        });
+
+        // WhatsApp functionality
+        function openWhatsApp() {
+            const nome = document.getElementById('nome').value || 'Cliente';
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            let whatsappMessage = `Olá! Sou o ${nome} e gostaria de saber mais sobre os serviços HomeShield.`;
+            
+            if (mensagem) {
+                whatsappMessage += `\n\n${mensagem}`;
+            }
+            
+            if (email) {
+                whatsappMessage += `\n\nO meu email é: ${email}`;
+            }
+            
+            if (telefone) {
+                whatsappMessage += `\nTelefone: ${telefone}`;
+            }
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // HomeShield WhatsApp number (replace with actual number)
+            const whatsappNumber = '351123456789'; // Replace with actual WhatsApp number
+            
+            // Open WhatsApp with pre-filled message
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+        }
+
+        // Floating WhatsApp button functionality
+        const floatingWhatsAppBtn = document.getElementById('whatsapp-float-btn');
+        const whatsappTooltip = document.getElementById('whatsapp-tooltip');
+        
+        floatingWhatsAppBtn.addEventListener('click', openWhatsApp);
+        
+        // Show/hide tooltip on hover
+        floatingWhatsAppBtn.addEventListener('mouseenter', function() {
+            whatsappTooltip.classList.remove('opacity-0', 'translate-y-2');
+            whatsappTooltip.classList.add('opacity-100', 'translate-y-0');
+        });
+        
+        floatingWhatsAppBtn.addEventListener('mouseleave', function() {
+            whatsappTooltip.classList.remove('opacity-100', 'translate-y-0');
+            whatsappTooltip.classList.add('opacity-0', 'translate-y-2');
+        });
+
+        // "Pedir Visita" and "Saber Mais" buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Pedir Visita') || button.textContent.includes('Saber Mais')) {
+                button.addEventListener('click', function() {
+                    document.getElementById('contactos').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9900d8d717275be6',t:'MTc2MDcxNTEyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
